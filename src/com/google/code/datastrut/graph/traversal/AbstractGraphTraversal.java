@@ -2,10 +2,6 @@ package com.google.code.datastrut.graph.traversal;
 
 import java.util.Iterator;
 
-import com.google.code.datastrut.dictionary.tree.BinarySearchTree;
-import com.google.code.datastrut.dictionary.tree.traversal.InOrderTraversal;
-import com.google.code.datastrut.dictionary.tree.traversal.PostOrderTraversal;
-import com.google.code.datastrut.dictionary.tree.traversal.PreOrderTraversal;
 import com.google.code.datastrut.graph.Graph;
 import com.google.code.datastrut.graph.GraphImpl;
 import com.google.code.datastrut.graph.Vertex;
@@ -73,7 +69,7 @@ public abstract class AbstractGraphTraversal<Type> implements Iterable<Type> {
   protected AbstractGraphTraversal(Graph<Type> newGraph, Type initialValue){
     this.graph = newGraph;
     this.graph.resetVisitedStates();
-    resultValues = new ArrayList<>();
+    resultValues = new ArrayList<Type>(16);
     this.initialValue = initialValue;
   }
 
